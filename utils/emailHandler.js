@@ -44,6 +44,6 @@ module.exports = class Email {
   }
 
   async sendRegistered() {
-    await this.send('registered', 'Registration Successfully');
+    await this.send('registered', 'Registration Successful');
   }
 };
