@@ -1,353 +1,146 @@
-doctype html
-html(lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office")
-	head
-		meta(charset="utf-8")
-		// utf-8 works for most cases
-		meta(name="viewport" content="width=device-width")
-		// Forcing initial-scale shouldn't be necessary
-		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		// Use the latest (edge) version of IE rendering engine
-		meta(name="x-apple-disable-message-reformatting")
-		// Disable auto-scale in iOS 10 Mail entirely
-		title
-		// The title tag shows in email notifications, like Android 4.4.
-		link(href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet")
-		// CSS Reset : BEGIN
-		style.
-			html,
-			body {
-			margin: 0 auto !important;
-			padding: 0 !important;
-			height: 100% !important;
-			width: 100% !important;
-			background: #f1f1f1;
-			}
-			/* What it does: Stops email clients resizing small text. */
-			* {
-			-ms-text-size-adjust: 100%;
-			-webkit-text-size-adjust: 100%;
-			}
-			/* What it does: Centers email on Android 4.4 */
-			div[style*="margin: 16px 0"] {
-			margin: 0 !important;
-			}
-			/* What it does: Stops Outlook from adding extra spacing to tables. */
-			table,
-			td {
-			mso-table-lspace: 0pt !important;
-			mso-table-rspace: 0pt !important;
-			}
-			/* What it does: Fixes webkit padding issue. */
-			table {
-			border-spacing: 0 !important;
-			border-collapse: collapse !important;
-			table-layout: fixed !important;
-			margin: 0 auto !important;
-			}
-			/* What it does: Uses a better rendering method when resizing images in IE. */
-			img {
-			-ms-interpolation-mode:bicubic;
-			}
-			/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
-			a {
-			text-decoration: none;
-			}
-			/* What it does: A work-around for email clients meddling in triggered links. */
-			*[x-apple-data-detectors],  /* iOS */
-			.unstyle-auto-detected-links *,
-			.aBn {
-			border-bottom: 0 !important;
-			cursor: default !important;
-			color: inherit !important;
-			text-decoration: none !important;
-			font-size: inherit !important;
-			font-family: inherit !important;
-			font-weight: inherit !important;
-			line-height: inherit !important;
-			}
-			/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
-			.a6S {
-			display: none !important;
-			opacity: 0.01 !important;
-			}
-			/* What it does: Prevents Gmail from changing the text color in conversation threads. */
-			.im {
-			color: inherit !important;
-			}
-			/* If the above doesn't work, add a .g-img class to any image in question. */
-			img.g-img + div {
-			display: none !important;
-			}
-			/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
-			/* Create one of these media queries for each additional viewport size you'd like to fix */
-			/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
-			@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
-			u ~ div .email-container {
-			min-width: 320px !important;
-			}
-			}
-			/* iPhone 6, 6S, 7, 8, and X */
-			@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
-			u ~ div .email-container {
-			min-width: 375px !important;
-			}
-			}
-			/* iPhone 6+, 7+, and 8+ */
-			@media only screen and (min-device-width: 414px) {
-			u ~ div .email-container {
-			min-width: 414px !important;
-			}
-			}
-		// CSS Reset : END
-		// Progressive Enhancements : BEGIN
-		style.
-			.primary{
-			background: #448ef6;
-			}
-			.bg_white{
-			background: #ffffff;
-			}
-			.bg_light{
-			background: #fafafa;
-			}
-			.bg_black{
-			background: #000000;
-			}
-			.bg_dark{
-			background: rgba(0,0,0,.8);
-			}
-			.email-section{
-			padding:2.5em;
-			}
-			/*BUTTON*/
-			.btn{
-			padding: 5px 15px;
-			display: inline-block;
-			}
-			.btn.btn-primary{
-			border-radius: 30px;
-			background: #448ef6;
-			color: #ffffff;
-			}
-			.btn.btn-white{
-			border-radius: 30px;
-			background: #ffffff;
-			color: #000000;
-			}
-			.btn.btn-white-outline{
-			border-radius: 30px;
-			background: transparent;
-			border: 1px solid #fff;
-			color: #fff;
-			}
-			h1,h2,h3,h4,h5,h6{
-			font-family: 'Work Sans', sans-serif;
-			color: #000000;
-			margin-top: 0;
-			font-weight: 400;
-			}
-			body{
-			font-family: 'Work Sans', sans-serif;
-			font-weight: 400;
-			font-size: 15px;
-			line-height: 1.8;
-			color: rgba(0,0,0,.4);
-			}
-			a{
-			color: #448ef6;
-			}
-			table{
-			}
-			/*LOGO*/
-			.logo h1{
-			margin: 0;
-			}
-			.logo h1 a{
-			color: #000000;
-			font-size: 20px;
-			font-weight: 700;
-			text-transform: uppercase;
-			font-family: 'Poppins', sans-serif;
-			}
-			.navigation{
-			padding: 0;
-			}
-			.navigation li{
-			list-style: none;
-			display: inline-block;;
-			margin-left: 5px;
-			font-size: 13px;
-			font-weight: 500;
-			}
-			.navigation li a{
-			color: rgba(0,0,0,.4);
-			}
-			/*HERO*/
-			.hero{
-			position: relative;
-			z-index: 0;
-			}
-			.hero .overlay{
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			content: '';
-			width: 100%;
-			background: #000000;
-			z-index: -1;
-			opacity: .3;
-			}
-			.hero .text{
-			color: rgba(255,255,255,.9);
-			}
-			.hero .text h2{
-			color: #fff;
-			font-size: 50px;
-			margin-bottom: 0;
-			font-weight: 300;
-			line-height: 1;
-			}
-			.hero .text h2 span{
-			font-weight: 600;
-			color: #448ef6;
-			}
-			/*HEADING SECTION*/
-			.heading-section{
-			}
-			.heading-section h2{
-			color: #000000;
-			font-size: 28px;
-			margin-top: 0;
-			line-height: 1.4;
-			font-weight: 400;
-			}
-			.heading-section .subheading{
-			margin-bottom: 20px !important;
-			display: inline-block;
-			font-size: 13px;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			color: rgba(0,0,0,.4);
-			position: relative;
-			}
-			.heading-section .subheading::after{
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: -10px;
-			content: '';
-			width: 100%;
-			height: 2px;
-			background: #448ef6;
-			margin: 0 auto;
-			}
-			.heading-section-white{
-			color: rgba(255,255,255,.8);
-			}
-			.heading-section-white h2{
-			font-family:
-			line-height: 1;
-			padding-bottom: 0;
-			}
-			.heading-section-white h2{
-			color: #ffffff;
-			}
-			.heading-section-white .subheading{
-			margin-bottom: 0;
-			display: inline-block;
-			font-size: 13px;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			color: rgba(255,255,255,.4);
-			}
-			/*BLOG*/
-			.text-services .meta{
-			text-transform: uppercase;
-			font-size: 14px;
-			margin-bottom: 0;
-			}
-			/*FOOTER*/
-			.footer{
-			color: rgba(255,255,255,.5);
-			}
-			.footer .heading{
-			color: #ffffff;
-			font-size: 20px;
-			}
-			.footer ul{
-			margin: 0;
-			padding: 0;
-			}
-			.footer ul li{
-			list-style: none;
-			margin-bottom: 10px;
-			}
-			.footer ul li a{
-			color: rgba(255,255,255,1);
-			}
-			@media screen and (max-width: 500px) {
-			}
-	body(width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;")
-		center(style="width: 100%; background-color: #f1f1f1;")
-			div(style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;")
-				| ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌ ‌
-			.email-container(style="max-width: 600px; margin: 0 auto;")
-				// BEGIN BODY
-				table(align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;")
-					tr
-						td.bg_white(valign="top" style="padding: 1em 2.5em;")
-							table(role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%")
-								tr
-									td.logo(style="text-align: center;")
-										a(href="#")
-											img(src="https://res.cloudinary.com/emmaxio/image/upload/v1569267909/tlw/logo.png" alt="LOGO")
-					// end tr
-					tr
-						td.hero.bg_white(valign="middle" style="background-image: url(https://res.cloudinary.com/emmaxio/image/upload/v1569267913/tlw/bg_1.jpg); background-size: cover; height: 400px;")
-							.overlay
-							table
-								tr
-									td
-										.text(style="padding: 0 4em; text-align: center;")
-											h2 TLW Nigeria
-											p
-												| A free tuition scholarship program to learn any of our
-												| 12 weeks weekend course and shape your future into the
-												| digital world.
-											p
-												a.btn.btn-primary(href="http://tlw.mindmachineonline.org") See more
-					// end tr
-					tr
-						td.bg_white.email-section
-							.heading-section(style="text-align: center; padding: 0 30px;")
-								h2 Dear #{firstName},
-								p Thank you for your registration on the TLW portal for the FREE DIGITAL SKILLS EMPOWERMENT program of Tutors and Learners World.
-								p You have taken a wise decision towards achieving your dreams.
-									| By enrolling with TLW you become automatically qualified for a scholarship worth over ONE HUNDRED THOUSAND NAIRA.
-									| and TLW shall train you TUITION FREE.
-								p Your program duration is 3 MONTHS and on WEEKENDS only.
-								p You shall be contacted with further instructions to complete your registration.
-									| We are located at No 2 Osho Street, Opebi Road, Ikeja, Lagos State. The nearest Bus Stop is ADEBOLA HOUSE.
-								p Regards,
-									| Admin Department.
-									| MindMachine Unlimited.
-									| Tutors and Learners World.
-					// end: tr
-					// 1 Column Text + Button : END
-				table(align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;")
-					tr
-						td.bg_black.footer.email-section(valign="middle")
-							table
-								tr
-									td(valign="top" width="33.333%")
-										table(role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%")
-											tr
-												td(style="text-align: center; padding-right: 10px;")
-													p © 2019 TLW. All Rights Reserved
-									td(valign="top" width="33.333%")
-										table(role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%")
-											tr
-												td(style="text-align: right; padding-left: 5px; padding-right: 5px;")
-													p
+doctype transitional
+html(xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office")
+  head
+    //if gte mso 9
+      xml
+        o:officedocumentsettings
+          o:allowpng
+            o:pixelsperinch 96
+    meta(http-equiv="Content-type" content="text/html; charset=utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="format-detection" content="date=no")
+    meta(name="format-detection" content="address=no")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="x-apple-disable-message-reformatting")
+    // [if !mso] <!
+    link(href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet")
+    // <![endif]
+    title Email Template
+    //if gte mso 9
+      style(type="text/css" media="all").
+        sup { font-size: 100% !important; }
+    style(type="text/css" media="screen").
+      /* Linked Styles */
+      body { padding:0 !important; margin:0 !important; display:block !important; min-width:100% !important; width:100% !important; background:#001736; -webkit-text-size-adjust:none }
+      a { color:#66c7ff; text-decoration:none }
+      p { padding:0 !important; margin:0 !important }
+      img { -ms-interpolation-mode: bicubic; /* Allow smoother rendering of resized image in Internet Explorer */ }
+      .mcnPreviewText { display: none !important; }
+      /* Mobile styles */
+      @media only screen and (max-device-width: 480px), only screen and (max-width: 480px) {
+      .mobile-shell { width: 100% !important; min-width: 100% !important; }
+      .bg { background-size: 100% auto !important; -webkit-background-size: 100% auto !important; }
+      .text-header,
+      .m-center { text-align: center !important; }
+      .center { margin: 0 auto !important; }
+      .container { padding: 20px 10px !important }
+      .td { width: 100% !important; min-width: 100% !important; }
+      .m-br-15 { height: 15px !important; }
+      .p30-15 { padding: 30px 15px !important; }
+      .m-td,
+      .m-hide { display: none !important; width: 0 !important; height: 0 !important; font-size: 0 !important; line-height: 0 !important; min-height: 0 !important; }
+      .m-block { display: block !important; }
+      .fluid-img img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+      .column,
+      .column-top,
+      .column-empty,
+      .column-empty2,
+      .column-dir-top { float: left !important; width: 100% !important; display: block !important; }
+      .column-empty { padding-bottom: 10px !important; }
+      .column-empty2 { padding-bottom: 30px !important; }
+      .content-spacing { width: 15px !important; }
+      }
+  body.body(style="padding:0 !important; margin:0 !important; display:block !important; min-width:100% !important; width:100% !important; background:#001736; -webkit-text-size-adjust:none;")
+    table(width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#001736")
+      tr
+        td(align="center" valign="top")
+          table.mobile-shell(width="650" border="0" cellspacing="0" cellpadding="0")
+            tr
+              td.td.container(style="width:650px; min-width:650px; font-size:0pt; line-height:0pt; margin:0; font-weight:normal; padding:55px 0px;")
+                // Intro
+                table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                  tr
+                    td(style="padding-bottom: 10px;")
+                      table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                        tr
+                          td.tbrr.p30-15(style="padding: 60px 30px; border-radius:26px 26px 0px 0px;" bgcolor="#12325c")
+                            table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                              tr
+                                td.h1.pb25(style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:40px; line-height:46px; text-align:center; padding-bottom:25px;") Welcome, Emily Garrett
+                // END Intro
+                // Article / Full Width Image + Title + Copy + Button
+                table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                  tr
+                    td(style="padding-bottom: 10px;")
+                      table(width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#0e264b")
+                        tr
+                          td.fluid-img(style="font-size:0pt; line-height:0pt; text-align:left;")
+                            img(src="https://res.cloudinary.com/emmaxio/image/upload/v1569280506/tlw/laptop.jpg" width="650" height="366" border="0" alt="")
+                        tr
+                          td.p30-15(style="padding: 50px 30px;")
+                            table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                              tr
+                                td.h3.pb20(style="color:#ffffff; font-family:'Muli', Arial,sans-serif; font-size:25px; line-height:32px; text-align:left; padding-bottom:20px;") Lorem ipsum dolor sit amet
+                              tr
+                                td.text.pb20(style="color:#ffffff; font-family:Arial,sans-serif; font-size:14px; line-height:26px; text-align:left; padding-bottom:20px;")
+                                  | Thank you for your registration on the TLW portal for the FREE DIGITAL SKILLS EMPOWERMENT program of Tutors and Learners World.
+                                  | You have taken a wise decision towards achieving your dreams.
+                                  br
+                                  br
+                                  | 																By enrolling with TLW you become automatically qualified for a scholarship worth over ONE HUNDRED THOUSAND NAIRA.
+                                  br
+                                  br
+                                  | 																TLW shall train you TUITION FREE.
+                                  | 																Your program duration is 3 MONTHS and on WEEKENDS only.
+                                  br
+                                  br
+                                  | 																You shall be contacted with further instructions to complete your registration.
+                                  | 																We are located at No 2 Osho Street, Opebi Road, Ikeja, Lagos State. The nearest Bus Stop is ADEBOLA HOUSE.
+                                  br
+                                  br
+                                  | 																Regards,
+                                  br
+                                  | 																Admin Department.
+                                  br
+                                  | 																MindMachine Unlimited.
+                                  br
+                                  | 																Tutors and Learners World.
+                              // Button
+                              tr
+                                td(align="left")
+                                  table(border="0" cellspacing="0" cellpadding="0")
+                                    tr
+                                      td.blue-button.text-button(style="background:#66c7ff; color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:14px; line-height:18px; padding:12px 30px; text-align:center; border-radius:0px 22px 22px 22px; font-weight:bold;")
+                                        a.link-white(href="http://tlw.mindmachineonline.org" target="_blank" style="color:#ffffff; text-decoration:none;")
+                                          span.link-white(style="color:#ffffff; text-decoration:none;") Visit Our Website
+                              // END Button
+                // END Article / Full Width Image + Title + Copy + Button
+                // Footer
+                table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                  tr
+                    td.p30-15.bbrr(style="padding: 50px 30px; border-radius:0px 0px 26px 26px;" bgcolor="#0e264b")
+                      table(width="100%" border="0" cellspacing="0" cellpadding="0")
+                        tr
+                          td(align="center" style="padding-bottom: 30px;")
+                            table(border="0" cellspacing="0" cellpadding="0")
+                              tr
+                                td.img(width="55" style="font-size:0pt; line-height:0pt; text-align:left;")
+                                  a(href="https://web.facebook.com/tlwnigeria/" target="_blank")
+                                    img(src="images/ico_facebook.jpg" width="38" height="38" border="0" alt="")
+                                td.img(width="55" style="font-size:0pt; line-height:0pt; text-align:left;")
+                                  a(href="https://twitter.com/tlwnigeria" target="_blank")
+                                    img(src="images/ico_twitter.jpg" width="38" height="38" border="0" alt="")
+                                td.img(width="55" style="font-size:0pt; line-height:0pt; text-align:left;")
+                                  a(href="https://www.instagram.com/withinnigeria/" target="_blank")
+                                    img(src="images/ico_instagram.jpg" width="38" height="38" border="0" alt="")
+                        tr
+                          td.text-footer1.pb10(style="color:#c1cddc; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:20px; text-align:center; padding-bottom:10px;") TLW Nigeria
+                        tr
+                          td.text-footer2(style="color:#8297b3; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:26px; text-align:center;") No 2 Osho Street, Opebi Road, Ikeja, Lagos State.
+                  tr
+                    td.text-footer3.p30-15(style="padding: 40px 30px 0px 30px; color:#475c77; font-family:'Muli', Arial,sans-serif; font-size:12px; line-height:18px; text-align:center;")
+                      a.link2-u(href="#" target="_blank" style="color:#475c77; text-decoration:underline;")
+                        span.link2-u(style="color:#475c77; text-decoration:underline;") Unsubscribe
+                      |  from this mailing list.
+                // END Footer
