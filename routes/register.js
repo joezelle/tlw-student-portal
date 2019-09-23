@@ -15,8 +15,7 @@ router.post('/', async (req, res) => {
     registration.email,
     registration.name
   ).sendRegistered();
-  console.log('sent');
-  res.redirect('back');
+  res.redirect('/register');
 });
 
 module.exports = router;
