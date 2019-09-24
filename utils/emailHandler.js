@@ -25,7 +25,7 @@ module.exports = class Email {
     const html = pug.renderFile(
       `${__dirname}/../views/emails/${template}.pug`,
       {
-        firstName: this.firstName,
+        firstName: this.firstName.trim().split(' ')[0],
         subject
       }
     );

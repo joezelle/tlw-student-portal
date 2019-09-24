@@ -6,7 +6,11 @@ const EmailHandler = require('../utils/emailHandler');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('register');
+  res.render('registration/register');
+});
+
+router.get('/thank-you', (req, res) => {
+  res.render('registration/thank-you');
 });
 
 router.post('/', async (req, res) => {
@@ -15,7 +19,7 @@ router.post('/', async (req, res) => {
     registration.email,
     registration.name
   ).sendRegistered();
-  res.redirect('/register');
+  res.redirect('/register/thank-you');
 });
 
 module.exports = router;
