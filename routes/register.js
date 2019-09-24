@@ -15,11 +15,11 @@ router.get('/thank-you', (req, res) => {
 
 router.post('/', async (req, res) => {
   const registration = await Registration.create(req.body);
-  res.redirect('/register/thank-you');
   await new EmailHandler(
     registration.email,
     registration.name
   ).sendRegistered();
+  res.redirect('/register/thank-you');
 });
 
 module.exports = router;

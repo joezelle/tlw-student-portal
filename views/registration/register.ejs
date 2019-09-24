@@ -48,14 +48,6 @@
 													<img class="logo-default" src="/ave/assets/img/logo/logo.png" alt="TLW Logo">
 												</span>
 											</a>
-											<button type="button" class="navbar-toggle collapsed nav-trigger style-mobile" data-toggle="collapse" data-target="#main-header-collapse" aria-expanded="false" data-changeclassnames='{ "html": "mobile-nav-activated overflow-hidden" }'>
-												<span class="sr-only">Toggle navigation</span>
-												<span class="bars">
-													<span class="bar"></span>
-													<span class="bar"></span>
-													<span class="bar"></span>
-												</span>
-											</button>
 										</div><!-- /.navbar-header -->
 									</div><!-- /.col -->
 									
@@ -66,10 +58,12 @@
 									<div class="col text-right">
 			
 										<div class="header-module lqd-show-on-mobile">
-			
-											<a href="index.html" class="btn btn-default text-uppercase circle btn-bordered border-thick font-size-12 font-weight-semibold btn-white">
+
+											<a href="http://tlw.mindmachineonline.org" class="btn btn-solid text-uppercase btn-lg semi-round btn-bordered border-none btn-gradient font-size-12 font-weight-bold lh-2 ltr-sp-05 mb-2">
 												<span>
-													<span class="btn-txt">Go Back Home</span>
+													<span class="btn-gradient-bg bg-gradient-primary-bt"></span>
+													<span class="btn-txt">Gradient Button</span>
+													<span class="btn-gradient-bg btn-gradient-bg-hover bg-gradient-primary-rl"></span>
 												</span>
 											</a>
 			
@@ -132,16 +126,16 @@
 								<div class="lqd-column col-md-10 col-md-offset-1">
 
 									<div class="contact-form contact-form-inputs-underlined contact-form-button-circle">
-										<form action="/register" method="post" novalidate="novalidate">
+										<form action="/register" method="post">
 											<div class="row d-flex flex-wrap">
 												<div class="lqd-column col-md-6 mb-20">
-													<input class="lh-25 mb-30" type="text" name="name" aria-required="true" aria-invalid="false" placeholder="Full Name" required>
-													<input class="lh-25 mb-30" type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Your email address" required>
-													<input class="lh-25 mb-30" type="tel" name="mobile" aria-required="true" aria-invalid="false" placeholder="Mobile no" required>
+													<input required class="lh-25 mb-30" type="text" name="name" aria-required="true" aria-invalid="false" placeholder="Full Name" required>
+													<input required class="lh-25 mb-30" type="email" name="email" aria-required="true" aria-invalid="false" placeholder="Your email address" required>
+													<input required class="lh-25 mb-30" type="tel" name="mobile" aria-required="true" aria-invalid="false" placeholder="Mobile no" required>
 												</div><!-- /.col-md-6 -->
 												<div class="lqd-column col-md-6 mb-20">
-													<textarea cols="10" rows="4" name="message" aria-required="true" aria-invalid="false" placeholder="Your reason for enrolling" required></textarea>
-													<select name="course" aria-required="true" aria-invalid="false" required="" id="ui-id-1" style="display: none;">
+													<textarea required cols="10" rows="4" name="message" aria-required="true" aria-invalid="false" placeholder="Your reason for enrolling" required></textarea>
+													<select required name="course" aria-required="true" aria-invalid="false" required="" id="ui-id-1" style="display: none;">
 														<option value="">Select Course</option>
 														<option value="FSD">FullStack Development</option>
 													</select>
@@ -154,7 +148,6 @@
 												</div><!-- /.col-md-6 -->
 											</div><!-- /.row -->
 										</form>
-										<div class="contact-form-result hidden"></div><!-- /.contact-form-result -->
 									</div><!-- /.contact-form -->
 
 								</div><!-- /.col-md-10 col-md-offset-1 -->
@@ -238,8 +231,6 @@
 	<script src="/ave/assets/vendors/jquery.min.js"></script>
 	<script src="/ave/assets/js/theme-vendors.js"></script>
 	<script src="/ave/assets/js/theme.min.js"></script>
-	<script src="/ave/assets/js/liquidAjaxContactForm.min.js"></script>
-	<script src="/ave/assets/js/liquidAjaxMailchimp.min.js"></script>
 
 </body>
 </html>
