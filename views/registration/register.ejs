@@ -127,7 +127,12 @@
 										<form action="/register" method="post">
 											<div class="row d-flex flex-wrap">
 												<div class="lqd-column col-md-6 mb-20">
-													<textarea required cols="10" rows="4" name="message" aria-required="true" aria-invalid="false" placeholder="Your reason for enrolling" required></textarea>
+													<input type="text" name="name" placeholder="Full name" />
+													<input type="email" name="email" placeholder="Email" />
+													<input type="text" name="mobile" placeholder="Phone" />
+												</div><!-- /.col-md-12 -->
+												<div class="lqd-column col-md-6 mb-20">
+													<textarea required cols="10" rows="3" name="message" aria-required="true" aria-invalid="false" placeholder="Your reason for enrolling" required></textarea>
 													<select required name="course" aria-required="true" aria-invalid="false" required="" id="ui-id-1" style="display: none;">
 														<option value="">Select Course</option>
 														<option value="FSD">FullStack Development</option>

@@ -59,27 +59,15 @@ router.get('/questionnaire', (req, res) => {
 });
 
 router.post('/follow-up', async (req, res) => {
-  // const registrations = await Registration.find({ registered: false });
-  // registrations.forEach(async registration => {
-  //   await new EmailHandler(
-  //     registration.email,
-  //     registration.name
-  //   ).sendRegistered();
-  //   registration.registered = true;
-  //   await registration.save();
-  // });
-
-  const registration = await Registration.findOne({
-    email: 'emmanuelheliot709@gmail.com'
+  const registrations = await Registration.find({ registered: false });
+  registrations.forEach(async registration => {
+    await new EmailHandler(
+      registration.email,
+      registration.name
+    ).sendRegistered();
+    registration.registered = true;
+    await registration.save();
   });
-  if (!registration) {
-    return res.json({ message: 'All Follow Up Emails NOT Sent!' });
-  }
-  await new EmailHandler(
-    registration.email,
-    registration.name,
-    registration._id
-  ).sendFollowUp();
 
   res.json({ message: 'All Follow Up Emails Sent!' });
 });
