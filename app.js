@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const flash = require('connect-flash');
 const morgan = require('morgan');
+const methodOverride = require('method-override')
 
 // Import Routes //
 const registrationRoutes = require('./routes/register');
@@ -19,6 +20,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Body Parser Configs
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 // Static Assets Config
 app.use(express.static(path.join(__dirname, 'public')));

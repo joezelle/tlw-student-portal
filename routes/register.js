@@ -35,7 +35,7 @@ router.get('/interview', async (req, res) => {
   });
 });
 
-router.post('/interview', async (req, res) => {
+router.patch('/interview', async (req, res) => {
   const interview = {
     date: req.body.date,
     time: req.body.time
