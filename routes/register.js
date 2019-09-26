@@ -17,7 +17,10 @@ router.get('/thank-you', (req, res) => {
 
 router.post('/', async (req, res) => {
   const registration = await Registration.create(req.body);
-  await new EmailHandler(registration.email, registration.name).sendFollowUp();
+  await new EmailHandler(
+    registration.email,
+    registration.name
+  ).sendRegistered();
   res.redirect('/register/thank-you');
 });
 
@@ -60,8 +63,9 @@ router.post('/follow-up', async (req, res) => {
   registrations.forEach(async registration => {
     await new EmailHandler(
       registration.email,
-      registration.name
-    ).sendRegistered();
+      registration.name,
+      registration._id
+    ).sendFollowUp();
     registration.registered = true;
     await registration.save();
   });
