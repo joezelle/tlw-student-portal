@@ -39,7 +39,11 @@ router.post('/interview', async (req, res) => {
     date: req.body.date,
     time: req.body.time
   };
-  const registration = await Registration.findByIdAndUpdate(req.body.id, interview);
+
+  const registration = await Registration.findByIdAndUpdate(
+    req.body.id,
+    interview
+  );
 
   res.redirect('/register/updated');
 });

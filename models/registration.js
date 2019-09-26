@@ -21,8 +21,14 @@ const registrationSchema = new Schema({
   },
   message: String,
   interview: {
-    date: String,
-    time: String
+    date: {
+      type: String,
+      default: ''
+    },
+    time: {
+      type: String,
+      default: ''
+    }
   },
   registered: {
     type: Boolean,
