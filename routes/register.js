@@ -41,10 +41,11 @@ router.patch('/interview', async (req, res) => {
     time: req.body.time
   };
 
-  const registration = await Registration.findByIdAndUpdate(
-    req.body.id,
-    interview
-  );
+  const registration = await Registration.findById(req.body.id);
+
+  registration.interview = interview;
+  registration.registered = true;
+  await registration.save();
 
   res.redirect('/register/updated');
 });
