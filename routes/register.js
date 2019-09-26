@@ -59,7 +59,7 @@ router.get('/questionnaire', (req, res) => {
 });
 
 router.post('/follow-up', async (req, res) => {
-  const registrations = await Registration.find({ registered: false });
+  const registrations = await Registration.find({ registered: true });
   registrations.forEach(async registration => {
     await new EmailHandler(
       registration.email,
