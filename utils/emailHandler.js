@@ -3,9 +3,10 @@ const pug = require('pug');
 const htmlToText = require('html-to-text');
 
 module.exports = class Email {
-  constructor(user, firstName) {
+  constructor(user, firstName, id) {
     this.to = user;
     this.firstName = firstName;
+    this.id = id || '';
     this.from = 'TLW <admission@tlw.com>';
   }
 
@@ -26,7 +27,8 @@ module.exports = class Email {
       `${__dirname}/../views/emails/${template}.pug`,
       {
         firstName: this.firstName.trim().split(' ')[0],
-        subject
+        subject,
+        url: `https://tlw-student-portal.herokuapp.com/register/interview?id=${this.id}`
       }
     );
 
@@ -45,5 +47,9 @@ module.exports = class Email {
 
   async sendRegistered() {
     await this.send('registered', 'Registration Successful');
+  }
+
+  async sendFollowUp() {
+    await this.send('followup', 'Fix Interview Date');
   }
 };

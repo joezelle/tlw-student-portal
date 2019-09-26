@@ -19,7 +19,15 @@ const registrationSchema = new Schema({
     type: String,
     required: true
   },
-  message: String
+  message: String,
+  interview: {
+    date: String,
+    time: String
+  },
+  registered: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = mongoose.model('Registration', registrationSchema);
