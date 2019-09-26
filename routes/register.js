@@ -17,10 +17,7 @@ router.get('/thank-you', (req, res) => {
 
 router.post('/', async (req, res) => {
   const registration = await Registration.create(req.body);
-  await new EmailHandler(
-    registration.email,
-    registration.name
-  ).sendRegistered();
+  await new EmailHandler(registration.email, registration.name).sendFollowUp();
   res.redirect('/register/thank-you');
 });
 
