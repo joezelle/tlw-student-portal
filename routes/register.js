@@ -62,7 +62,7 @@ router.post('/follow-up', async (req, res) => {
   // });
 
   const registration = await Registration.findOne({
-    email: 'aneriemmax@gmail.com'
+    email: 'emmanuelheliot709@gmail.com'
   });
   if (!registration) {
     return res.json({ message: 'All Follow Up Emails NOT Sent!' });
