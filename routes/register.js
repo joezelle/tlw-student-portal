@@ -28,9 +28,10 @@ router.post('/', async (req, res) => {
 
 router.get('/interview', async (req, res) => {
   const registration = await Registration.findById(req.query.id);
-  console.log(req.query.id, registration);
   res.render('registration/interview', {
-    id: registration._id
+    id: registration._id,
+    name: registration.name,
+    email: registration.email
   });
 });
 
