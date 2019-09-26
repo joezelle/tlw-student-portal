@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const flash = require('connect-flash');
 const morgan = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+
+require('./utils/cronTasks');
 
 // Import Routes //
 const registrationRoutes = require('./routes/register');
