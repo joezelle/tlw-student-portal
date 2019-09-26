@@ -67,7 +67,11 @@ router.post('/follow-up', async (req, res) => {
   if (!registration) {
     return res.json({ message: 'All Follow Up Emails NOT Sent!' });
   }
-  await new EmailHandler(registration.email, registration.name).sendFollowUp();
+  await new EmailHandler(
+    registration.email,
+    registration.name,
+    registration._id
+  ).sendFollowUp();
 
   res.json({ message: 'All Follow Up Emails Sent!' });
 });
