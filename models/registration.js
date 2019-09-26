@@ -9,6 +9,7 @@ const registrationSchema = new Schema({
   },
   email: {
     type: String,
+    unique: true,
     required: true
   },
   mobile: {
@@ -21,7 +22,7 @@ const registrationSchema = new Schema({
   },
   message: String,
   interview: {
-    date: {
+    day: {
       type: String,
       default: ''
     },

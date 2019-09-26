@@ -37,7 +37,7 @@ router.get('/interview', async (req, res) => {
 
 router.patch('/interview', async (req, res) => {
   const interview = {
-    date: req.body.date,
+    day: req.body.day,
     time: req.body.time
   };
 
