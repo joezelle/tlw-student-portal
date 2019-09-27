@@ -11,9 +11,17 @@ require('./utils/cronTasks');
 // Import Routes //
 const registrationRoutes = require('./routes/register');
 
+const Reg = require('./models/registration')
+
 // Initialize express and use cors
 const app = express();
 app.use(cors());
+
+app.use(async (req, res, next) => {
+  const registrations = await Registration.find({ registered: false });
+  console.log(registrations)
+  next();
+})
 
 // View Engine Setup //
 app.set('view engine', 'ejs');
