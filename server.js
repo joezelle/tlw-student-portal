@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: './config.env' });
 const app = require('./app');
 
-const DB = 'mongodb+srv://admin:admin@tlw-xus4c.mongodb.net/tlw';
+const DB = 'mongodb://admin:admin@tlw-shard-00-00-xus4c.mongodb.net:27017,tlw-shard-00-01-xus4c.mongodb.net:27017,tlw-shard-00-02-xus4c.mongodb.net:27017/tlw?ssl=true&replicaSet=TLW-shard-0&authSource=admin&retryWrites=true&w=majority';
 
 mongoose
   .connect(DB, {

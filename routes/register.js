@@ -16,7 +16,17 @@ router.get('/thank-you', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  const registration = await Registration.create(req.body);
+  let registration = await Registration.findOne({
+    $or: [{ email: req.body.email }, { mobile: req.body.mobile }]
+  });
+  if (registration) {
+    req.flash(
+      'errormsg',
+      'Email or Phone number already exists. Try with a different info'
+    );
+    return res.redirect('/register');
+  }
+  registration = await Registration.create(req.body);
   await new EmailHandler(
     registration.email,
     registration.name
