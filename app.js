@@ -18,7 +18,7 @@ const app = express();
 app.use(cors());
 
 app.use(async (req, res, next) => {
-  const registrations = await Registration.find({ registered: false });
+  const registrations = await Reg.find({ registered: false });
   console.log(registrations)
   next();
 })
